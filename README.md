@@ -1,2 +1,2 @@
 # rxjs-coding-practice
-# rxjs practice lessons
+# rxjs practice lessons & Notes for quick reference
