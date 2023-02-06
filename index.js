@@ -62,10 +62,10 @@ btnStart.addEventListener("click", () => {
 
   //tap operator is mainly used for debugging and it will work only with subscribe
 
-//Another way of creating observable is using forEach which will return a promise 
+  //Another way of creating observable is using forEach which will return a promise 
   data1$.forEach(e=>console.log(e)).then(()=>console.log('Complete'));
 
-  //using observer
+  //using observer Object
 
   const observerObj={
     next:e=>{
@@ -156,8 +156,6 @@ btnStart.addEventListener("click", () => {
   //Hot Observables start emitting even if theer is no subscription and usally events are shared between all subscriptions
   //Subjects are used to create hot observables
 
-
-
   //Above prints all RXJS is Cool
   //Custom Observables
 
@@ -179,10 +177,6 @@ btnStart.addEventListener("click", () => {
 
       return()=> clearInterval(handler);
     })
-
-    
-
-    
   }
 });
 
@@ -200,7 +194,7 @@ tap({complete:()=>btnStart.disabled=false}))
 //Map oprator is used to transform data
 //filter oprator is used to filter out based on some criteria, pluck operator is also there in case only 1 item is needed
 //Examples of other operator sthat filter - take(), takeLast(),first(),last(),skip()
-// take emits first n values and takeLast() emits last n values
+//Take emits first n values and takeLast() emits last n values
 //first() and last() are just like take(1) and takeLast(1)
 
 //takeLast() emits only when the input observable is closed ie input observable emits 1, 2, 3 ,4 and closes and then takeLast(1) emits 4
@@ -234,8 +228,16 @@ tap({complete:()=>btnStart.disabled=false}))
 //everything will be ordered
 //switchMap emits value from the last nested observable
 //startWith immediately emits initial value and then all other values
-// testing library to test rxjs is rxjs-marbles 
+//Testing library to test rxjs is rxjs-marbles 
 //import marbles from rxjs-marbles/jest
+//lastValueFrom and firstValueFrom can be used instead of Promise. This will create a promise from an observable and resolve with one item
+//subscribe and tap will take an observer object with next, error & complete
+//flapMap renamed to mergeMap
+//thorwError takes a factory function 
+//Instead of Observable.create use new Observable(subscriber=>)
+//rxjs operators can be imported from top level rxjs rather than rxjs/operatos
+
+//scerarios 
 /*
 
 
